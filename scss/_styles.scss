@@ -1,0 +1,579 @@
+img {
+  -webkit-user-drag: none;
+}
+
+hr {
+  background-color: $targetBorderBottom;
+  height:1px;
+  width: 100px;
+  float: left;
+}
+
+input, textarea {
+  padding: 0 10px 0;
+  border-image-source: linear-gradient(transparent, $dateColor);
+  border-width: 1px;
+  border-image-slice: 1;
+  font-family: OSI;
+  font-size: 15px;
+}
+
+textarea {
+  padding-top: 10px;
+  resize: none;
+}
+
+.headerFluid {
+  background: url("../img/headerBg.png") repeat;
+  clip-path: polygon(100% 0, 100% 100%,52% 236px, 50% 206px, 0 206px, 0 0);
+}
+
+
+.header {
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+
+}
+
+.firstLogoLine {
+  @include make-row();
+  height: 50px;
+  margin: 20px 0 40px 0;
+  font-family: RL;
+  color: $firstLogoLineTextColor;
+}
+
+.logo {
+  @include make-lg-column(2);
+  padding: 0;
+  cursor: pointer;
+
+  &__caption {
+    font-size: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+    margin: 0 0 0 20px;
+    font-family: RL;
+    color: $firstLogoLineTextColor;
+
+    &--footer {
+      padding-top: 20px;
+      margin: 0;
+    }
+  }
+
+  &--footer {
+    @include make-lg-column-offset(2);
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.menu {
+  @include make-lg-column(9);
+  @include make-lg-column-offset(1);
+  padding-top: 5px;
+  font-size: 18px;
+}
+
+.menuList {
+  @extend .nav;
+  @extend .nav-pills;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 50px;
+
+  &__item {
+    margin: 0 12px 0px 12px!important;
+    cursor: pointer;
+    color: $firstLogoLineTextColor;
+
+    &--active {
+      color: white;
+      padding-bottom: 10px;
+      border-bottom: 2px solid $targetBorderBottom;
+    }
+  }
+}
+
+.secondLogoLine {
+  @include make-row();
+  padding: 0 0 30px 12px;
+}
+
+.target {
+  @include make-lg-column(2);
+  font-family: RSB;
+  font-size: 45px;
+  color: white;
+  line-height: 1.2;
+  padding: 0 0 14px;
+  border-bottom: 2px solid $targetBorderBottom;
+  width: inherit!important;
+}
+
+.thirdLogoLine {
+  @include make-row();
+  font-family: RM;
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+  margin-left: 54%;
+  padding: 0 0 6px;
+  letter-spacing: 2px;
+  z-index: 0;
+}
+
+.path {
+  @include make-lg-column(12);
+}
+
+.mainFluid {
+  background-color: white;
+  overflow: hidden;
+  padding-top: 130px;
+}
+
+.main {
+
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+
+
+}
+
+.section {
+  margin-bottom: 100px;
+}
+
+.date {
+  @include make-lg-column(2);
+  text-align: center;
+  color: $dateColor;
+  line-height: 1.2;
+
+  &__year {
+    font-family: RSB;
+    font-size: 24px;
+  }
+  &__month {
+    text-transform: uppercase;
+    font-family: RB;
+    font-size: 24px;
+  }
+  &__number {
+    font-family: RR;
+    font-size: 52px;
+    margin-top: -15px;
+  }
+  &--narrow {
+    @include make-lg-column(1);
+  }
+}
+
+.content {
+  @include make-lg-column(10);
+  &--narrow {
+    @include make-lg-column(8);
+  }
+  &--other {
+    @include make-lg-column(8);
+    @include make-lg-column-offset(1);
+    padding-left: 0;
+  }
+}
+
+.article {
+  border: 1px solid $articleBorderColor;
+  width: 100%;
+
+  &__caption {
+    margin: 0 47px 0 40px;
+    font-family: RSB;
+    font-size: 28px;
+    color: $articleCaptionColor;
+    padding: 40px 0 18px;
+    border-bottom: 1px solid $articleBorderColor;
+
+    &--post {
+      font-size: 45px;
+      padding-top: 18px;
+
+    }
+  }
+  &__info {
+    display: flex;
+    margin: 28px 47px 27px 40px;
+  }
+  &__text {
+    margin: 40px 47px 40px 40px;
+    font-family: OSR;
+    font-size: 14px;
+  }
+
+  &--narrow {
+    border-bottom: 1px solid transparent;
+  }
+}
+
+.text {
+  margin-bottom: 25px;
+  &--red {
+    color: red;
+  }
+  &--share {
+    font-size: 22px;
+    margin-bottom: 0;
+  }
+}
+
+.quote {
+  font-family: OSI;
+  font-size: 18px;
+  padding: 30px 100px 30px 25px;
+  margin: 40px 0 40px;
+
+  background-image: linear-gradient(lighten($mandarianOrange, 30%), $mandarianOrange);
+  -moz-background-size: 1px 100%;
+  background-size: 6px 100%;
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+}
+
+.share {
+  @include make-lg-column(8);
+  @include make-lg-column-offset(1);
+  font-family: RM;
+  font-size: 22px;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.caption {
+  font-size: 38px;
+  margin: 0;
+  font-family: RSB;
+  color: $articleCaptionColor;
+  padding: 18px 0 0;
+}
+
+.other {
+  padding: 0 20px 0 20px;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+}
+
+.iconCaption {
+  margin: 0 20px 0 10px;
+  padding-top: 3px;
+}
+
+.button {
+  background-color: white;
+  font-family: RSB;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 150px;
+  height: 50px;
+  color: $buttonColor;
+  border: 1px solid $buttonColor;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+  transition: background-color 0.1s ease-in;
+  margin: 0 0 40px 40px;
+
+  &:hover {
+    background-color: $redOrange;
+    color: white;
+    border-bottom: 2px solid $mandarianOrange;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from($mandarianOrange), to(transparent));
+    background-image: -webkit-linear-gradient($mandarianOrange, transparent);
+    background-image: linear-gradient(transparent, $mandarianOrange), linear-gradient(transparent, $mandarianOrange);
+    -moz-background-size: 1px 100%;
+    background-size: 1px 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+  }
+
+  &--number {
+    width: 10%;
+    color: $buttonNumberColor;
+    margin-left: 20px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &--right {
+    float: right;
+  }
+  &--toTop {
+    color: white;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 0px;
+    right: 6%;
+    cursor:pointer;
+    background: $buttonToTopBg url("../img/icon/ti-angle-up.png") no-repeat center;
+
+    &:hover {
+      background-size: 50% 30%;
+      background-position: 0 0, 100% 0;
+      color: white;
+      width: 40px;
+      height: 40px;
+      background-color: $buttonToTopBg;
+      position: fixed;
+      bottom: 0px;
+      right: 6%;
+      cursor:pointer;
+      background-image: url("../img/icon/ti-angle-up.png");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+
+.navigation {
+  padding: 0 47px 0 195px;
+  margin: 100px 0 80px;
+  &__wrapper {
+    @include make-lg-column(8);
+    padding-left: 0;
+    &--narrow {
+      @include make-lg-column(10);
+      @include make-lg-column-pull(1);
+      margin-left: -25px;
+      padding: 0;
+    }
+  }
+}
+
+.block {
+  position: relative;
+  height: 350px;
+
+  &__cover {
+    clip-path: polygon(50% 0, 54.8% 48px, 100% 48px, 100% 100%, 0 100%, 0 0);
+    background-color: $blockCoverBg;
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+    background-size: contain;
+
+    &--narrow {
+      clip-path: polygon(50% 0, 56% 48px, 100% 48px, 100% 100%, 0 100%, 0 0);
+    }
+
+    &--noImage {
+      background-color: transparent;
+    }
+  }
+
+  &--noImage {
+    height: 47px;
+    border-top: 1px solid $solitude;
+    width: 472px;
+  }
+
+  &--noHeight {
+    height: 47px;
+  }
+}
+
+.imgInside {
+  width: inherit;
+}
+
+.rhombus {
+  clip-path: polygon(1px 0, 70px 0, 119px 47px, 46px 47px);
+  width: 119px;
+  height: 47px;
+  background-color: red;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  bottom: 350px;
+}
+
+.rhombus--noBottom {
+  clip-path: polygon(1px 0, 70px 0, 119px 47px, 46px 47px);
+  width: 119px;
+  height: 47px;
+  background-color: red;
+  text-align: center;
+  position: relative;
+  left: 470px;
+  bottom: 0;
+}
+
+.rhombus--noImage {
+  bottom: 351px;
+  left: 100%;
+}
+
+.rhombus>.iconInside {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.footerFluid {
+  height: 150px;
+  background-color: $footerBg;
+  bottom: 0;
+}
+
+.footer {
+  @include container-fixed();
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+
+  &__content {
+    @include make-row();
+  }
+}
+
+.social {
+  @include make-lg-column(3);
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+
+  &--context {
+    @include make-lg-column-pull(2);
+    left: -15%;
+    padding-top: 50px;
+  }
+
+  &__icon {
+    cursor: pointer;
+  }
+}
+
+.copyright {
+  @include make-lg-column(4);
+  @include make-lg-column-offset(1);
+  font-family: OSL;
+  font-size: 14px;
+  color: $solitude;
+  padding-top: 70px;
+}
+
+.toTop {
+  @include make-lg-column(1);
+}
+
+.minds {
+  @include make-lg-column(7);
+  @include make-lg-column-offset(1);
+  padding-left: 0;
+  margin-top: 20px;
+  &--offset {
+    @include make-lg-column(7);
+    @include make-lg-column-offset(2);
+  }
+}
+
+.folder {
+  float: left;
+  margin: 0 20px 50px 0;
+}
+
+.name {
+  font-family: RSB;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.leaveMessage {
+  @include make-lg-column(8);
+  @include make-lg-column-offset(1);
+  margin: 80px 0 50px;
+  padding: 0;
+}
+
+.input {
+  @include make-lg-column(6);
+  margin: 0;
+  padding: 0;
+
+  &__name {
+
+    width: 360px;
+    height: 54px;
+    margin-bottom: 50px;
+  }
+  &__email {
+
+    width: 360px;
+    height: 54px;
+  }
+  &__search {
+    width: 10%;
+  }
+}
+
+.relatedPosts {
+  @include make-row();
+  @include make-lg-column(11);
+  margin-top: 100px;
+  &__lArrow  {
+    @include make-lg-column(1);
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  &__rArrow {
+    @include make-lg-column-offset(10);
+    margin-top: 100px;
+    cursor: pointer;
+  }
+  &__folder {
+    @include make-lg-column(5);
+    clip-path: polygon(40% 0, 45% 20px, 90% 20px, 90% 90%, 0 90%, 0 0);
+    background-color: $blockCoverBg;
+    min-height: 260px;
+    padding: 10% 5% 0 0;
+    text-align: center;
+    font-family: OSSB;
+    font-size: 20px;
+    color: $articleBorderColor;
+  }
+}
+
+
+
